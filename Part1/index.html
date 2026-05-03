@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>P
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <script src="main.js" defer></script>
+        <title>New York Times API</title>
+    </head>
+
+    <body class="popular-filter-page" onload="getData()">
+        <div class="filter-box">
+            <div class="filter-header">Filter</div>
+
+            <label class="filter-heading" for="SortBy">Sort By:</label>
+            <form class="form-options" onchange="getData()">
+                <input type="radio" id="most-viewed" name="sort-by" value="viewed" checked>
+                <label for="most-viewed">Most Viewed</label><br>
+
+                <input type="radio" id="most-shared" name="sort-by" value="shared">
+                <label for="most-shared">Most Shared</label><br>
+
+                <input type="radio" id="most-emailed" name="sort-by" value="emailed">
+                <label for="most-emailed">Most Emailed</label><br>
+            </form>
+
+            <label class="filter-heading" for="TimeFrame">Time Frame:</label>
+            <form class="form-options" onchange="getData()">
+                <input type="radio" id="day" name="time-frame" value="1" checked>
+                <label for="day">Day</label><br>
+
+                <input type="radio" id="week" name="time-frame" value="7">
+                <label for="week">Week</label><br>
+
+                <input type="radio" id="month" name="time-frame" value="30">
+                <label for="month">Month</label><br>
+            </form>
+        </div>
+        <div class="articles-box">
+            <div class="article-listing">
+                <!-- Just define structure, will be dynamically inserted with js later -->
+                <div class="article-heading">
+                    <span class="article-title">TITLE</span>
+                    <span class="article-date">2026-04-28</span>
+                </div>
+                <div class="article-body">
+                    <img src="test-image.jpg" alt="Test Image" class="article-image">
+                    <span class="article-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem qui sint earum iste ullam exercitationem totam similique esse doloremque quos provident fugiat ipsam laboriosam, vitae dignissimos a cupiditate mollitia delectus.</span>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

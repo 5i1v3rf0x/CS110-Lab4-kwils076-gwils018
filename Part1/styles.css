@@ -1,0 +1,127 @@
+.popular-filter-page {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding-top: 50px;
+    padding-left: 5px;
+}
+
+.filter-box {
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+    min-width: 250px;
+    max-height: 200px;
+    padding-bottom: 50px;
+}
+
+.filter-header {
+    font-size: 20px;
+    font-family: 'Calibri', sans-serif;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.filter-heading {
+    font-size: 16px;
+    font-family: 'Calibri', sans-serif;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.form-options {
+    font-size: 14px;
+    font-family: 'Calibri', sans-serif;
+    font-weight: 400;
+    margin: 5px;
+}
+
+.articles-box {
+    background-color: black;
+    margin-left: 100px;
+    width: 100%;
+}
+
+.article-listing {
+    background-color: #B9BABD;
+    flex-grow: 1;
+    border-radius: 8px;
+    padding: 12px;
+    /* width: 800px; */
+    min-height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right:20px;
+}
+
+.article-heading {
+    display: flex;
+    /* justify-content: space-between; */
+    width: 100%;
+}
+
+.article-num {
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Calibri', sans-serif;
+    font-weight: 700;
+    color: black;
+    margin-right: 5px;
+}
+
+.article-title {
+    display: flex;
+    flex-grow: 1;
+    text-align: left;
+    justify-content: left;
+    font-size: 16px;
+    font-family: 'Calibri', sans-serif;
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+}
+
+.article-date {
+    display: flex;
+    font-size: 12px;
+    font-family: 'Calibri', sans-serif;
+    font-weight: 400;
+}
+
+.article-body {
+    display: flex;
+}
+
+.article-image {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+}
+
+.article-content {
+    font-size: 14px;
+    font-family: 'Calibri', sans-serif;
+    font-weight: 400;
+    margin-left: 15px
+}
+
+@media (max-width: 900px) {
+    .popular-filter-page {
+        flex-direction: column;
+        align-items: center;
+    }
+    .articles-box {
+        width: 90%;
+        margin-left: 20px;
+        margin-top: 80px;
+    }
+
+}
+
+.loading {
+    justify-self: center;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-family: 'Calibri', sans-serif;
+}
