@@ -14,9 +14,25 @@ export default function Board({ }) {
     const [xScore, setXScore] = useState(0);
     const [oScore, setOScore] = useState(0);
     const [squares, setSquares] = useState(Array(9).fill(null));
+    const [winner, setWinner] = useState(null);
+    const [gameActive, setGameActive] = useState(true);
+    const win_patterns = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ]
 
     function handleClick(i) {
 
+        if (!gameActive) {
+            return;
+        }
+        
         const nextSquares = squares.slice();
 
         if (xIsNext) {
@@ -26,10 +42,29 @@ export default function Board({ }) {
             nextSquares[i] = 'O';
         }
         setSquares(nextSquares);
+
+        const winner = checkWinner(nextSquares);
+        if (winner) {
+            setWinner(winner);
+            setGameActive(false);
+            if (winner === 'X') {
+                setXScore(xScore + 1);
+            } else {
+                setOScore(oScore + 1);
+            }
+        }
         setXIsNext(!xIsNext);
     }
 
-    function checkWinner() {}
+    function checkWinner(squares) {
+        for (let index = 0; index < win_patterns.length; index++) {
+            const [a, b, c] = win_patterns[index];
+            if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+                return squares[a];
+            }
+        }
+        return null;
+    }
 
     function newGame() {
         setSquares(Array(9).fill(null));
@@ -50,7 +85,6 @@ export default function Board({ }) {
                 Your turn, {xIsNext ? 'X' : 'O'}
             </div>
             <div className="board">
-                <div className="status">{status}</div>
                 <div className="board-row">
                     <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
                     <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -67,7 +101,7 @@ export default function Board({ }) {
                     <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
                 </div>
             </div>
-            <div className="display-win"></div>
+            <div className="display-win">{winner && <span>Player {winner} wins!</span>}</div>
             <button className="new-game" onClick={newGame}>New Game</button>
             <button className="reset" onClick={resetGame}>Reset</button>
         </>
