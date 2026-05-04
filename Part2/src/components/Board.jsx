@@ -55,9 +55,9 @@ export default function Board({ }) {
                     <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
                 </div>
             </div>
-            <div className="display_win"></div>
-            <button>New Game</button>
-            <button>Reset</button>
+            <div className="display-win"></div>
+            <button className="new-game">New Game</button>
+            <button className="reset">Reset</button>
         </>
     );
 }
