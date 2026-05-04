@@ -31,10 +31,17 @@ export default function Board({ }) {
 
     function checkWinner() {}
 
-    function newGame() {}
+    function newGame() {
+        setSquares(Array(9).fill(null));
+        setXIsNext(true);
+    }
 
-    function resetGame() {}
-    
+    function resetGame() {
+        newGame();
+        setXScore(0);
+        setOScore(0);
+    }
+
     return (
         <>
             <h1>Tic Tac Toe</h1>
