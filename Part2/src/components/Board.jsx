@@ -15,6 +15,7 @@ export default function Board({ }) {
     const [oScore, setOScore] = useState(0);
     const [squares, setSquares] = useState(Array(9).fill(null));
     const [winner, setWinner] = useState(null);
+    const [gameActive, setGameActive] = useState(true);
     const win_patterns = [
         [0, 1, 2],
         [3, 4, 5],
@@ -28,6 +29,10 @@ export default function Board({ }) {
 
     function handleClick(i) {
 
+        if (!gameActive) {
+            return;
+        }
+        
         const nextSquares = squares.slice();
 
         if (xIsNext) {
@@ -41,6 +46,12 @@ export default function Board({ }) {
         const winner = checkWinner(nextSquares);
         if (winner) {
             setWinner(winner);
+            setGameActive(false);
+            if (winner === 'X') {
+                setXScore(xScore + 1);
+            } else {
+                setOScore(oScore + 1);
+            }
         }
         setXIsNext(!xIsNext);
     }
