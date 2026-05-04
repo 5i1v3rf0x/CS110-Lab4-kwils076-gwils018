@@ -30,7 +30,7 @@ export default function Board({ }) {
 
     function handleClick(i) {
 
-        if (!gameActive) {
+        if (!gameActive || squares[i]) {
             return;
         }
         
