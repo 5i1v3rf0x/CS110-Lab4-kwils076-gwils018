@@ -69,6 +69,8 @@ export default function Board({ }) {
     function newGame() {
         setSquares(Array(9).fill(null));
         setXIsNext(true);
+        setGameActive(true);
+        setWinner(null);
     }
 
     function resetGame() {
