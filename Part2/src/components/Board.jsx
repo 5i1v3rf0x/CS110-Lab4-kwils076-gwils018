@@ -66,10 +66,19 @@ export default function Board({ }) {
         return null;
     }
 
-    function newGame() {}
+    function newGame() {
+        setSquares(Array(9).fill(null));
+        setXIsNext(true);
+        setGameActive(true);
+        setWinner(null);
+    }
 
-    function resetGame() {}
-    
+    function resetGame() {
+        newGame();
+        setXScore(0);
+        setOScore(0);
+    }
+
     return (
         <>
             <h1>Tic Tac Toe</h1>
