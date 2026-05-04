@@ -11,6 +11,8 @@ function Square({ value, onSquareClick }) {
 
 export default function Board({ }) {
     const [xIsNext, setXIsNext] = useState(true);
+    const [xScore, setXScore] = useState(0);
+    const [oScore, setOScore] = useState(0);
     const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i) {
@@ -27,15 +29,18 @@ export default function Board({ }) {
         setXIsNext(!xIsNext);
     }
 
-    function resetGame() {}
-    
+    function checkWinner() {}
+
     function newGame() {}
 
+    function resetGame() {}
+    
     return (
         <>
             <h1>Tic Tac Toe</h1>
+            <h2>Scores - X: {xScore} | O: {oScore}</h2>
             <div>
-                Your turn, X
+                Your turn, {xIsNext ? 'X' : 'O'}
             </div>
             <div className="board">
                 <div className="status">{status}</div>
@@ -56,8 +61,8 @@ export default function Board({ }) {
                 </div>
             </div>
             <div className="display-win"></div>
-            <button className="new-game">New Game</button>
-            <button className="reset">Reset</button>
+            <button className="new-game" onClick={newGame}>New Game</button>
+            <button className="reset" onClick={resetGame}>Reset</button>
         </>
     );
 }
