@@ -76,6 +76,7 @@ export default function Board({ }) {
         setXIsNext(true);
         setGameActive(true);
         setWinner(null);
+        setTurnCount(0);
     }
 
     function resetGame() {
