@@ -16,6 +16,7 @@ export default function Board({ }) {
     const [squares, setSquares] = useState(Array(9).fill(null));
     const [winner, setWinner] = useState(null);
     const [gameActive, setGameActive] = useState(true);
+    const [turnCount, setTurnCount] = useState(0);
     const win_patterns = [
         [0, 1, 2],
         [3, 4, 5],
@@ -29,11 +30,12 @@ export default function Board({ }) {
 
     function handleClick(i) {
 
-        if (!gameActive) {
+        if (!gameActive || squares[i]) {
             return;
         }
         
         const nextSquares = squares.slice();
+        setTurnCount(turnCount + 1);
 
         if (xIsNext) {
             nextSquares[i] = 'X';
@@ -53,6 +55,9 @@ export default function Board({ }) {
                 setOScore(oScore + 1);
             }
         }
+        else if (turnCount === 8) {
+            setGameActive(false);
+        }
         setXIsNext(!xIsNext);
     }
 
@@ -71,6 +76,7 @@ export default function Board({ }) {
         setXIsNext(true);
         setGameActive(true);
         setWinner(null);
+        setTurnCount(0);
     }
 
     function resetGame() {
@@ -104,6 +110,7 @@ export default function Board({ }) {
                 </div>
             </div>
             <div className="display-win">{winner && <span>Player {winner} wins!</span>}</div>
+            <div className="display-draw">{!winner && !gameActive && <span>It's a tie!</span>}</div>
             <button className="new-game" onClick={newGame}>New Game</button>
             <button className="reset" onClick={resetGame}>Reset</button>
         </>
