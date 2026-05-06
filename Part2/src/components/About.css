@@ -9,6 +9,8 @@
     margin: 10px;
     width: 400px;
     border-radius: 20px;
+    background-color: gray;
+    color: black;
 }
 
 .team-member-image {
