@@ -10,3 +10,8 @@
     width: 400px;
     border-radius: 20px;
 }
+
+.team-member-image {
+    height: auto;
+    border-radius: 20px;
+}
