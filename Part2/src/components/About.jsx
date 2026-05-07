@@ -15,14 +15,14 @@ export default function About() {
                     <div className="team-members-card">
                         <h3>Gavin</h3>
                         <img className="team-member-image" src={frogImg} alt="Frog Picture" />
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus obcaecati praesentium quis asperiores delectus perferendis sapiente eius, cumque vitae vel voluptates corporis, autem eveniet voluptatem similique in harum eaque fugit!</p>
+                        <p>The one who implemented the turn logic.</p>
                     </div>
                     <div className="team-members-card">
                         <h3>Keanu</h3>
-                        <img className="team-member-image" src={frogImg} alt="Frog Picture" />
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus obcaecati praesentium quis asperiores delectus perferendis sapiente eius, cumque vitae vel voluptates corporis, autem eveniet voluptatem similique in harum eaque fugit!</p>
+                        <img className="team-member-image" src={frogImg} alt="Frog Picture" style={{ transform: "scaleX(-1)" }} />
+                        <p>The one who implemented the scoring logic.</p>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
     );
