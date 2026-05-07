@@ -21,6 +21,12 @@
     text-decoration-color: black;
     font-weight: bold;
     font-size: 8em;
+    background-color: gray;
+}
+
+.square:hover {
+    background-color: #A9A9A9;
+    cursor: pointer;
 }
 
 .square-value {

@@ -1,0 +1,19 @@
+.team-members-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.team-members-card {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    border-radius: 20px;
+    background-color: gray;
+    color: black;
+}
+
+.team-member-image {
+    height: auto;
+    border-radius: 20px;
+}
